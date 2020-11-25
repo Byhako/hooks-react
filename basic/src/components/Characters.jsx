@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useReducer, useMemo, useRef, useCallback } from 'react'
+import React, { useState, useReducer, useMemo, useRef, useCallback } from 'react'
 import Search from './Search';
+import useCharacters from './hooks/useCharacters';
 
 const initialState = {
   favorites: []
@@ -26,16 +27,11 @@ const reducer = (state, action) => {
 }
 
 const Characters = ({ darkMode }) => {
-  const [characters, setCharacters] = useState([]);
   const [favorites, dispatch] = useReducer(reducer, initialState);
   const [search, setSearch] = useState('');
   const searchInput = useRef(null);
-
-  useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
-      .then(response => response.json())
-      .then(data => setCharacters(data.results));
-  }, []);
+  // hook personalizado
+  const characters = useCharacters('https://rickandmortyapi.com/api/character');
 
   const handleClic = (favorite) => {
     if (favorites.favorites.includes(favorite)) {
@@ -44,10 +40,6 @@ const Characters = ({ darkMode }) => {
       dispatch({ type: 'ADD_TO_FAVORITE', payload: favorite })
     }
   };
-
-  // const handleSearch = () => {
-  //   setSearch(searchInput.current.value);
-  // };
 
   const handleSearch = useCallback(() => {
     setSearch(searchInput.current.value);
