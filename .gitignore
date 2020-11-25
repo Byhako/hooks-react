@@ -2,6 +2,7 @@
 
 # dependencies
 basic/node_modules
+conf/node_modules
 basic/.pnp
 basic.pnp.js
 
@@ -10,6 +11,7 @@ basic/coverage
 
 # production
 basic/build
+conf/build
 
 # misc
 basic/.DS_Store
@@ -22,3 +24,7 @@ basic/npm-debug.log*
 basic/yarn-debug.log*
 basic/yarn-error.log*
 basic/yarn.lock
+conf/npm-debug.log*
+conf/yarn-debug.log*
+conf/yarn-error.log*
+conf/yarn.lock
