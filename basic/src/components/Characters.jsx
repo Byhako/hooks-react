@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useState, useEffect, useReducer, useMemo } from 'react'
 
 const initialState = {
   favorites: []
@@ -24,9 +24,16 @@ const reducer = (state, action) => {
   }
 }
 
-const Characters = () => {
+const Characters = ({ darkMode }) => {
   const [characters, setCharacters] = useState([]);
   const [favorites, dispatch] = useReducer(reducer, initialState);
+  const [search, setSearch] = useState('');
+
+  const styleInput = {
+    borderBottomColor: darkMode ? '#f5deb3' : '#222',
+    color: darkMode ? '#f5f5f5' : '#222',
+    backgroundColor: darkMode ? '#222' : '#f5f5f5'
+  };
 
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character')
@@ -42,9 +49,26 @@ const Characters = () => {
     }
   };
 
+  const handleSearch = (e) => {
+    setSearch(e.target.value); 
+  };
+
+  const filteredUsers = useMemo(() => (
+    characters.filter(user => user.name.toLowerCase().includes(search.toLowerCase()))
+  ), [characters, search]);
+
   return (
     <div className="characters">
-      {characters.map((item, idx) => (
+      <div className='search'>
+        <input
+          type='text'
+          value={search}
+          onChange={handleSearch}
+          style={styleInput}
+          placeholder='Buscar' />
+      </div>
+
+      {filteredUsers.map((item, idx) => (
         <div className='card' key={idx}>
           <img src={item.image} alt={item.name} />
           <h4>{item.name}</h4>

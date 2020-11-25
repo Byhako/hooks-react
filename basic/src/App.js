@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="app" style={styleApp}>
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Characters />
+      <Characters darkMode={darkMode} />
     </div>
   );
 }
