@@ -4,6 +4,11 @@
   grid-row-gap: 1.5em;
   display: grid;
   margin: 0 0 4em 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.information-head h2 {
+  margin: 16px 0;
 }
 .information-buttons {
   display: flex;
@@ -11,9 +16,6 @@
   align-items: center;
 }
 .information-sidebar {
-  margin: 10px 0 0 0;
-}
-.information-back {
   margin: 10px 0 0 0;
 }
 .information-item {
@@ -73,20 +75,23 @@ input {
 }
 .information button {
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
-    background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
-    background-color: #63b8ee;
-    border-radius: 6px;
-    border: 1px solid #3866a3;
-    display: inline-block;
-    cursor: pointer;
-    color: #14396a;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 6px 24px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #7cacde;
-    width: 100%;
-    display: block;
-    outline: none;
+  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+  background-color: #63b8ee;
+  border-radius: 6px;
+  border: 1px solid #3866a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #14396a;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #7cacde;
+  width: auto;
+  display: block;
+  outline: none;
+}
+.information button:active {
+  transform: scale(0.97);
 }
