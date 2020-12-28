@@ -3,6 +3,8 @@
   grid-gap: 2rem;
   grid-row-gap: 1.5em;
   display: grid;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .payment-back {
   margin: 10px 0 0 0;

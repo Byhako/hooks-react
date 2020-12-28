@@ -1,5 +1,7 @@
 .success {
   margin: 0 0 4em 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .success-map {
   margin: 10px 0 0 0;
