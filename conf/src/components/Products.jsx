@@ -8,7 +8,6 @@ const Products = () => {
   const { products } = state;
 
   const handleAddToCart = product => {
-    console.log('hola', state);
     addToCart(product);
   };
 

@@ -6,10 +6,6 @@ import '../styles/header.css';
 const Header = () => {
   const { state: { cart } } = useContext(AppContext);
 
-  console.log('cart', cart)
-  console.log('cart.length', cart.length)
-  console.log('cart.length', cart.length > 0)
-
   return (
     <div className="header">
       <h2>
