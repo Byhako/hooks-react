@@ -95,3 +95,6 @@ input {
 .information button:active {
   transform: scale(0.97);
 }
+.information a {
+  text-decoration: none;
+}

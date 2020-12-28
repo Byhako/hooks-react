@@ -7,6 +7,9 @@
   max-width: 800px;
   margin: 0 auto;
 }
+.checkout-content h3 {
+  margin: 16px 0;
+}
 .checkout-item {
   display: flex;
   justify-content: space-between;
@@ -15,15 +18,15 @@
 }
 .checkout-item .fas {
   margin: 0 0 0 10px;
-  color: rgba(0,0,0,0.4);
+  color: #ed143d;
   cursor: pointer;
+  font-size: 18px;
 }
 .checkout-item button {
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
-  color: #ed143d;
   font-size: 26px;
   font-weight: bold;
 }
@@ -60,7 +63,6 @@
 .checkout-sidebar button:active {
   transform: scale(0.97);
 }
-
-a {
+.checkout a {
   text-decoration: none;
 }
