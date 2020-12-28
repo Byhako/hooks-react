@@ -1,8 +1,14 @@
+.products {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
 .products-items {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
   grid-row-gap: 1.5em;
-  display: grid;
+  max-width: 800px;
 }
 .products-item {
   text-decoration: none;
